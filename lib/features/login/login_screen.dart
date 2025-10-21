@@ -2,9 +2,10 @@
 import 'package:flutter/material.dart';
 
 import '../../core/app_color.dart';
+import '../../core/font_style.dart';
 import '../../core/widgets/app_logo.dart';
 import '../../core/widgets/social_login_button.dart';
-import '../dashboad_screen.dart';
+import '../../routes/route_names_const.dart';
 
 
 
@@ -55,18 +56,14 @@ class LoginScreen extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text('Get started',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 22,
-                        color: AppColors.textDefault,
-                      )
+                      style: mLightBlack28W500
                   ),
                   SizedBox(height: 24),
                   SocialLoginButton(
                     icon: Image.asset('assets/images/u_google.png', height: 22),
                     text: 'Sign in with Google',
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardScreen(),));
+                      Navigator.pushNamed(context, dashboardScreenRoute);
                     },
                   ),
                   SizedBox(height: 16),
@@ -74,7 +71,7 @@ class LoginScreen extends StatelessWidget {
                     icon: Image.asset('assets/images/u_facebook.png', height: 22),
                     text: 'Sign in with Facebook',
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardScreen(),));
+                      Navigator.pushNamed(context, dashboardScreenRoute);
                     },
                   ),
                   SizedBox(height: 16),
@@ -82,7 +79,7 @@ class LoginScreen extends StatelessWidget {
                   icon: Image.asset('assets/images/u_Apple.png', height: 22),
                     text: 'Sign in with Apple',
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardScreen(),));
+                      Navigator.pushNamed(context, dashboardScreenRoute);
                     },
                   ),
                   SizedBox(height: 16),
@@ -107,9 +104,9 @@ class LoginScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(32),
                         ),
                       ),
-                      child: Text('Sign in with password', style: TextStyle(fontSize: 16, color: Colors.white)),
+                      child: Text('Sign in with password', style: mCardBg14W600),
                       onPressed: () {
-                        Navigator.pushNamed(context, '/dashboard');
+                        Navigator.pushNamed(context, dashboardScreenRoute);
                       },
                     ),
                   ),
@@ -117,10 +114,10 @@ class LoginScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Don't have an account? ", style: TextStyle(color: Colors.black87)),
+                      Text("Don't have an account? ", style: mLightBlack14W400),
                       GestureDetector(
                         onTap: () {},
-                        child: Text('Sign up', style: TextStyle(color: AppColors.primary, fontWeight: FontWeight.bold)),
+                        child: Text('Sign up', style: mPrimary16W400),
                       ),
                     ],
                   ),

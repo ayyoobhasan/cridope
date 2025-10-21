@@ -77,15 +77,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
               onTap: (idx) => setState(() => selectedMatchTab = idx),
             ),
             SizedBox(height: 6),
-            // Main content changes as well
+
             selectedPage == 0 ? buildHomeContent() : buildMatchContent(),
           ],
         ),
       ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: selectedPage,
-          selectedItemColor: AppColors.primary,
-          unselectedItemColor: Colors.grey,
           onTap: (idx) {
             setState(() {
               selectedPage = idx;

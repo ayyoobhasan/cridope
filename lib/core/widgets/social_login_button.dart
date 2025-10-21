@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 
 import '../app_color.dart';
+import '../font_style.dart';
 
 
 class SocialLoginButton extends StatelessWidget {
@@ -30,7 +31,7 @@ class SocialLoginButton extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(text, style: TextStyle(color: AppColors.primary, fontSize: 15, fontWeight: FontWeight.w500)),
+                Text(text, style: mPrimary16W400),
               ],
             ),
             Positioned(

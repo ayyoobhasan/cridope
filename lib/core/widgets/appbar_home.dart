@@ -17,7 +17,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: AppColors.primary,
       elevation: 0,
       automaticallyImplyLeading: false,
-      title:AppLogoHeader(useDivider: false,),
+      title:AppLogoHeader(actualPadding: false,),
       actions: [
         Image.asset("assets/images/img_app2.png", height: 40, fit: BoxFit.cover),
         IconButton(

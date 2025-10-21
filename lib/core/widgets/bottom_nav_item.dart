@@ -12,13 +12,33 @@ BottomNavigationBarItem svgNavItem({
   required int index,
   required int selectedIndex,
 }) {
+  final isSelected = selectedIndex == index;
+
   return BottomNavigationBarItem(
-    icon: SvgPicture.asset(
-      asset,
-      height: 20,
-      width: 20,
-      color: selectedIndex == index ? AppColors.primary : Colors.grey,
+    icon: Padding(
+      padding: const EdgeInsets.only(top: 4.0, bottom: 2.0),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SvgPicture.asset(
+            asset,
+            height: 22,
+            width: 22,
+            color: isSelected ? AppColors.primary : Colors.grey,
+          ),
+          const SizedBox(height: 3), // spacing between icon & label
+          Text(
+            label,
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
+              color: isSelected ? AppColors.primary : Colors.grey,
+            ),
+          ),
+        ],
+      ),
     ),
-    label: label,
+    label: '',
+    tooltip: '',
   );
 }
